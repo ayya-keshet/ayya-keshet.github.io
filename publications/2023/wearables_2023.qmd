@@ -1,0 +1,16 @@
+---
+title: "Wearable and digital devices to monitor and treat metabolic diseases"
+subtitle: "Ayya Keshet, Lee Reicher, Noam Bar, Eran Segal"
+author: "Nature Metabolism"
+date: "2023/04/23"
+image: ../images/wearables.jpeg
+
+categories: []
+draft: false
+---
+
+[[paper](https://www.nature.com/articles/s42255-023-00778-y)]
+
+Cardiometabolic diseases are a major public-health concern owing to their increasing prevalence worldwide. These diseases are characterized by a high degree of interindividual variability with regards to symptoms, severity, complications and treatment responsiveness. Recent technological advances, and the growing availability of wearable and digital devices, are now making it feasible to profile individuals in ever-increasing depth. Such technologies are able to profile multiple health-related outcomes, including molecular, clinical and lifestyle changes. Nowadays, wearable devices allowing for continuous and longitudinal health screening outside the clinic can be used to monitor health and metabolic status from healthy individuals to patients at different stages of disease. Here we present an overview of the wearable and digital devices that are most relevant for cardiometabolic-disease-related readouts, and how the information collected from such devices could help deepen our understanding of metabolic diseases, improve their diagnosis, identify early disease markers and contribute to individualization of treatment and prevention plans.
+
+![](../images/wearables.jpeg)
