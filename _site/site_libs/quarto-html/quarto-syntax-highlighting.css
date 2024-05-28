@@ -1,6 +1,6 @@
 /* quarto syntax highlight colors */
 :root {
-  --quarto-hl-ot-color: #214611;
+  --quarto-hl-ot-color: #003B4F;
   --quarto-hl-at-color: #657422;
   --quarto-hl-ss-color: #20794D;
   --quarto-hl-an-color: #5E5E5E;
@@ -28,7 +28,7 @@
   --quarto-hl-cn-color: #8f5902;
   --quarto-hl-sc-color: #5E5E5E;
   --quarto-hl-dv-color: #AD0000;
-  --quarto-hl-kw-color: #214611;
+  --quarto-hl-kw-color: #003B4F;
 }
 
 /* other quarto variables */
@@ -37,24 +37,24 @@
 }
 
 pre > code.sourceCode > span {
-  color: #214611;
+  color: #003B4F;
 }
 
 code span {
-  color: #214611;
+  color: #003B4F;
 }
 
 code.sourceCode > span {
-  color: #214611;
+  color: #003B4F;
 }
 
 div.sourceCode,
 div.sourceCode pre.sourceCode {
-  color: #214611;
+  color: #003B4F;
 }
 
 code span.ot {
-  color: #214611;
+  color: #003B4F;
   font-style: inherit;
 }
 

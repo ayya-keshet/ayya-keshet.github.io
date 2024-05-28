@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -49,7 +49,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,8 +64,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -96,24 +104,48 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../styles.css">
 <meta name="twitter:title" content="Ayya Keshet - Publications">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://hrossman.github.io/publications/images/fasting_gluc_2024.png">
 <meta name="twitter:creator" content="@AyyaKeshet">
 <meta name="twitter:site" content="@AyyaKeshet">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image-height" content="1264">
-<meta name="twitter:image-width" content="2830">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Ayya Keshet</span>
     </a>
@@ -125,22 +157,22 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../publications/publications.html" rel="" target="" aria-current="page">
- <span class="menu-text">Publications</span></a>
+    <a class="nav-link active" href="../publications/publications.html" aria-current="page"> 
+<span class="menu-text">Publications</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto tools-wide">
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools tools-wide">
     <a href="https://twitter.com/AyyaKeshet" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter"></i></a>
-    <a href="www.linkedin.com/in/ayya-keshet-a048768a" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
-    <a href="https://scholar.google.com/citations?user=iFB8x-IAAAAJ&hl=en" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-google"></i></a>
+    <a href="https://www.linkedin.com/in/ayya-keshet-a048768a/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
+    <a href="https://scholar.google.com/citations?user=iFB8x-IAAAAJ&amp;hl=en" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-google"></i></a>
     <a href="https://github.com/ayya-keshet" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -169,9 +201,11 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
-<p>Updated full list at <a href="https://scholar.google.com/citations?hl=en&user=iFB8x-IAAAAJ&view_op=list_works&sortby=pubdate">google scholar</a></p>
+
+<p>Updated full list at <a href="https://scholar.google.com/citations?user=kQrQJ1gAAAAJ&amp;hl=en">google scholar</a></p>
 
 
 
@@ -203,32 +237,30 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="HPP" data-listing-date-sort="1712523600000" data-listing-file-modified-sort="1712600119301" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="0" data-categories="HPP" data-listing-date-sort="1712548800000" data-listing-file-modified-sort="1716919082039" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="181">
 <div class="thumbnail">
-<p><a href="../publications/2024/fasting_gluc_2024.html"> <img src="../publications/images/fasting_gluc_2024.png" class="thumbnail-image"> </a></p>
+<p><a href="../publications/2024/fasting_gluc_2024.html" class="no-external"></a></p><a href="../publications/2024/fasting_gluc_2024.html" class="no-external">
+<p><img src="../publications/images/fasting_gluc_2024.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2024/fasting_gluc_2024.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2024/fasting_gluc_2024.html">
 <h3 class="no-anchor listing-title">
-Continuous glucose monitoring and intrapersonal variability in fasting glucose
+<a href="../publications/2024/fasting_gluc_2024.html" class="no-external">Continuous glucose monitoring and intrapersonal variability in fasting glucose</a>
 </h3>
 <div class="listing-subtitle">
-Smadar Shilo, Ayya Keshet, Hagai Rossman, Anastasia Godneva, Yeela Talmor-Barkan, Yaron Aviv, Eran Segal
+<a href="../publications/2024/fasting_gluc_2024.html" class="no-external">Smadar Shilo, Ayya Keshet, Hagai Rossman, Anastasia Godneva, Yeela Talmor-Barkan, Yaron Aviv, Eran Segal</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('HPP'); return false;">
 HPP
 </div>
 </div>
-<a href="../publications/2024/fasting_gluc_2024.html">
 <div class="listing-description">
-[paper]
+<a href="../publications/2024/fasting_gluc_2024.html" class="no-external">[paper]</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../publications/2024/fasting_gluc_2024.html">
+<a href="../publications/2024/fasting_gluc_2024.html" class="no-external">
 <div class="listing-date">
 2024
 </div>
@@ -238,32 +270,99 @@ Nature Medicine
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="HPP" data-listing-date-sort="1682974800000" data-listing-file-modified-sort="1710600098442" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="1" data-categories="HPP,Methods" data-listing-date-sort="1711339200000" data-listing-file-modified-sort="1716919082038" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="220">
 <div class="thumbnail">
-<p><a href="../publications/2023/cgmap_2023.html"> <img src="../publications/images/cgmap.jpeg" class="thumbnail-image"> </a></p>
+<p><a href="../publications/2024/comprer_2024.html" class="no-external"></a></p><a href="../publications/2024/comprer_2024.html" class="no-external">
+<p><img src="../publications/images/comprer_2024.jpg" class="thumbnail-image"></p>
+</a><p><a href="../publications/2024/comprer_2024.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2023/cgmap_2023.html">
 <h3 class="no-anchor listing-title">
-CGMap: Characterizing continuous glucose monitor data in thousands of non-diabetic individuals
+<a href="../publications/2024/comprer_2024.html" class="no-external">COMPRER: A Multimodal Multi-Objective Pretraining Framework for Enhanced Medical Image Representation</a>
 </h3>
 <div class="listing-subtitle">
-Ayya Keshet, Smadar Shilo, Anastasia Godneva, Yeela Talmor-Barkan, Yaron Aviv, Eran Segal, Hagai Rossman
+<a href="../publications/2024/comprer_2024.html" class="no-external">Guy Lutsker, Hagai Rossman, Nastya Godneva, Eran Segal</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('HPP'); return false;">
+HPP
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Methods'); return false;">
+Methods
+</div>
+</div>
+<div class="listing-description">
+<a href="../publications/2024/comprer_2024.html" class="no-external">[paper]</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../publications/2024/comprer_2024.html" class="no-external">
+<div class="listing-date">
+2024
+</div>
+<div class="listing-author">
+medArxiv (preprint)
 </div>
 </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="HPP" data-listing-date-sort="1712548800000" data-listing-file-modified-sort="1716919082040" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="186">
+<div class="thumbnail">
+<p><a href="../publications/2024/fundus_2024.html" class="no-external"></a></p><a href="../publications/2024/fundus_2024.html" class="no-external">
+<p><img src="../publications/images/fundus_2024.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2024/fundus_2024.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/2024/fundus_2024.html" class="no-external">Unveiling Associations Between Retinal Microvascular Architecture and Phenotypes Across Thousands of Healthy Subjects</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/2024/fundus_2024.html" class="no-external">Michal Shapira, Smadar Shilo, Yeela Talmor-Barkan, Yaron Aviv, Yotam Reisner, Anastasia Godneva, Adina Weinberger, Alon Skaat, Anat Loewenstein, Eran Segal, Hagai Rossman</a>
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('HPP'); return false;">
 HPP
 </div>
 </div>
-<a href="../publications/2023/cgmap_2023.html">
 <div class="listing-description">
-[paper]
+<a href="../publications/2024/fundus_2024.html" class="no-external">[paper]</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../publications/2024/fundus_2024.html" class="no-external">
+<div class="listing-date">
+2024
+</div>
+<div class="listing-author">
+medArxiv (preprint)
 </div>
 </a>
 </div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="HPP" data-listing-date-sort="1683000000000" data-listing-file-modified-sort="1716919082033" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="151">
+<div class="thumbnail">
+<p><a href="../publications/2023/cgmap_2023.html" class="no-external"></a></p><a href="../publications/2023/cgmap_2023.html" class="no-external">
+<p><img src="../publications/images/cgmap.jpeg" class="thumbnail-image"></p>
+</a><p><a href="../publications/2023/cgmap_2023.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/2023/cgmap_2023.html" class="no-external">CGMap: Characterizing continuous glucose monitor data in thousands of non-diabetic individuals</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/2023/cgmap_2023.html" class="no-external">Ayya Keshet, Smadar Shilo, Anastasia Godneva, Yeela Talmor-Barkan, Yaron Aviv, Eran Segal, Hagai Rossman</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('HPP'); return false;">
+HPP
+</div>
+</div>
+<div class="listing-description">
+<a href="../publications/2023/cgmap_2023.html" class="no-external">[paper]</a>
+</div>
+</div>
 <div class="metadata">
-<a href="../publications/2023/cgmap_2023.html">
+<a href="../publications/2023/cgmap_2023.html" class="no-external">
 <div class="listing-date">
 2023
 </div>
@@ -273,67 +372,129 @@ Cell Metabolism
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="Covid-19" data-listing-date-sort="1618779600000" data-listing-file-modified-sort="1710600098440" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="4" data-categories="Covid-19" data-listing-date-sort="1618804800000" data-listing-file-modified-sort="1716919082025" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="192">
 <div class="thumbnail">
-<p><a href="../publications/2023/wearables_2023.html"> <img src="../publications/images/wearables.png" class="thumbnail-image"> </a></p>
+<p><a href="../publications/2021/covid_immunization_2021.html" class="no-external"></a></p><a href="../publications/2021/covid_immunization_2021.html" class="no-external">
+<p><img src="../publications/images/covid_immunization.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2021/covid_immunization_2021.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2023/wearables_2023.html">
 <h3 class="no-anchor listing-title">
-Wearable and digital devices to monitor and treat metabolic diseases
+<a href="../publications/2021/covid_immunization_2021.html" class="no-external">COVID-19 dynamics after a national immunization program in Israel</a>
 </h3>
 <div class="listing-subtitle">
-Ayya Keshet, Lee Reicher, Noam Bar, Eran Segal
+<a href="../publications/2021/covid_immunization_2021.html" class="no-external">Hagai Rossman, Smadar Shilo, Tomer Meir, Malka Gorfine, Uri Shalit, Eran Segal</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Covid-19'); return false;">
-Reviews
+Covid-19
 </div>
 </div>
-<a href="../publications/2023/wearables_2023.html">
 <div class="listing-description">
-[paper] [press: Economist] [press: Financial times…
+<a href="../publications/2021/covid_immunization_2021.html" class="no-external">[paper] [press: Economist] [press: Financial times…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../publications/2023/wearables_2023.html">
+<a href="../publications/2021/covid_immunization_2021.html" class="no-external">
 <div class="listing-date">
-2023
+2021
 </div>
 <div class="listing-author">
-Nature Metabolism
+Nature Medicine
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="Methods" data-listing-date-sort="1665262800000" data-listing-file-modified-sort="1710600098442" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="5" data-categories="Covid-19" data-listing-date-sort="1616731200000" data-listing-file-modified-sort="1716919082027" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="151">
 <div class="thumbnail">
-<p><a href="../publications/2022/pymsm_2022.html"> <img src="../publications/images/pymsm.png" class="thumbnail-image"> </a></p>
+<p><a href="../publications/2021/hospital_load_2021.html" class="no-external"></a></p><a href="../publications/2021/hospital_load_2021.html" class="no-external">
+<p><img src="../publications/images/hospital_load.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2021/hospital_load_2021.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2022/pymsm_2022.html">
 <h3 class="no-anchor listing-title">
-PyMSM: Python package for Competing Risks and Multi-State models for Survival Data
+<a href="../publications/2021/hospital_load_2021.html" class="no-external">Hospital load and increased COVID-19 related mortality in Israel</a>
 </h3>
 <div class="listing-subtitle">
-Hagai Rossman, Ayya Keshet, Malka Gorfine
+<a href="../publications/2021/hospital_load_2021.html" class="no-external">Hagai Rossman, Tomer Meir, Jonathan Somer, Smadar Shilo, Rom Gutman, Asaf Ben-Arie, Eran Segal, Uri Shalit, Malka Gorfine</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Covid-19'); return false;">
+Covid-19
+</div>
+</div>
+<div class="listing-description">
+<a href="../publications/2021/hospital_load_2021.html" class="no-external">[paper] [code] [press]</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../publications/2021/hospital_load_2021.html" class="no-external">
+<div class="listing-date">
+2021
+</div>
+<div class="listing-author">
+Nature Communications
 </div>
 </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="EHRs" data-listing-date-sort="1612933200000" data-listing-file-modified-sort="1716919082022" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="109">
+<div class="thumbnail">
+<p><a href="../publications/2021/childhood_obesity_2021.html" class="no-external"></a></p><a href="../publications/2021/childhood_obesity_2021.html" class="no-external">
+<p><img src="../publications/images/childhood_obesity.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2021/childhood_obesity_2021.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/2021/childhood_obesity_2021.html" class="no-external">Prediction of Childhood obesity from nationwide health records</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/2021/childhood_obesity_2021.html" class="no-external">Hagai Rossman, Smadar Shilo, Shiri Hazan, Nitzan Artzi, Eran Hadar, Ran Balicer, Becca Feldman, Arnon Wiznitzer, Eran Segal</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('EHRs'); return false;">
+EHRs
+</div>
+</div>
+<div class="listing-description">
+<a href="../publications/2021/childhood_obesity_2021.html" class="no-external">[paper]</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../publications/2021/childhood_obesity_2021.html" class="no-external">
+<div class="listing-date">
+2021
+</div>
+<div class="listing-author">
+Journal of Pediatrics
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="Methods" data-listing-date-sort="1665288000000" data-listing-file-modified-sort="1716919082032" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="176">
+<div class="thumbnail">
+<p><a href="../publications/2022/pymsm_2022.html" class="no-external"></a></p><a href="../publications/2022/pymsm_2022.html" class="no-external">
+<p><img src="../publications/images/pymsm.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2022/pymsm_2022.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/2022/pymsm_2022.html" class="no-external">PyMSM: Python package for Competing Risks and Multi-State models for Survival Data</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/2022/pymsm_2022.html" class="no-external">Hagai Rossman, Ayya Keshet, Malka Gorfine</a>
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Methods'); return false;">
 Methods
 </div>
 </div>
-<a href="../publications/2022/pymsm_2022.html">
 <div class="listing-description">
-[paper] [code]
+<a href="../publications/2022/pymsm_2022.html" class="no-external">[paper] [code]</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../publications/2022/pymsm_2022.html">
+<a href="../publications/2022/pymsm_2022.html" class="no-external">
 <div class="listing-date">
 2022
 </div>
@@ -343,32 +504,30 @@ Journal of Open Source Software
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="EHRs" data-listing-date-sort="1666040400000" data-listing-file-modified-sort="1710600098441" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="8" data-categories="EHRs" data-listing-date-sort="1666065600000" data-listing-file-modified-sort="1716919082030" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="234">
 <div class="thumbnail">
-<p><a href="../publications/2022/csect_2022.html"> <img src="../publications/images/csect.png" class="thumbnail-image"> </a></p>
+<p><a href="../publications/2022/csect_2022.html" class="no-external"></a></p><a href="../publications/2022/csect_2022.html" class="no-external">
+<p><img src="../publications/images/csect.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2022/csect_2022.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2022/csect_2022.html">
 <h3 class="no-anchor listing-title">
-Estimating the effect of cesarean delivery on long term childhood health across two countries
+<a href="../publications/2022/csect_2022.html" class="no-external">Estimating the effect of cesarean delivery on long term childhood health across two countries</a>
 </h3>
 <div class="listing-subtitle">
-Ayya Keshet, Hagai Rossman, Smadar Shilo, Shiri Barbash-Hazan, Guy Amit, Maytal Bivas-Benita, Chen Yanover, Irena Girshovitz, Pinchas Akiva, Avi Ben-Haroush, Eran Hadar, Arnon Wiznitzer, Eran Segal
+<a href="../publications/2022/csect_2022.html" class="no-external">Ayya Keshet, Hagai Rossman, Smadar Shilo, Shiri Barbash-Hazan, Guy Amit, Maytal Bivas-Benita, Chen Yanover, Irena Girshovitz, Pinchas Akiva, Avi Ben-Haroush, Eran Hadar, Arnon Wiznitzer, Eran Segal</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('EHRs'); return false;">
 EHRs
 </div>
 </div>
-<a href="../publications/2022/csect_2022.html">
 <div class="listing-description">
-[paper] [code]
+<a href="../publications/2022/csect_2022.html" class="no-external">[paper] [code]</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../publications/2022/csect_2022.html">
+<a href="../publications/2022/csect_2022.html" class="no-external">
 <div class="listing-date">
 2022
 </div>
@@ -378,32 +537,30 @@ PLOS ONE
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="Covid-19" data-listing-date-sort="1586379600000" data-listing-file-modified-sort="1710600098440" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="9" data-categories="Covid-19" data-listing-date-sort="1586404800000" data-listing-file-modified-sort="1716919082018" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="218">
 <div class="thumbnail">
-<p><a href="../publications/2020/framework_2020.html"> <img src="../publications/images/framework_2020.png" class="thumbnail-image"> </a></p>
+<p><a href="../publications/2020/framework_2020.html" class="no-external"></a></p><a href="../publications/2020/framework_2020.html" class="no-external">
+<p><img src="../publications/images/framework_2020.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2020/framework_2020.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2020/framework_2020.html">
 <h3 class="no-anchor listing-title">
-A framework for identifying regional outbreak and spread of COVID-19 from one-minute population-wide surveys
+<a href="../publications/2020/framework_2020.html" class="no-external">A framework for identifying regional outbreak and spread of COVID-19 from one-minute population-wide surveys</a>
 </h3>
 <div class="listing-subtitle">
-Hagai Rossman, Ayya Keshet, Smadar Shilo, Amir Gavrieli, Tal Bauman, Ori Cohen, Ran Balicer, Benjamin Geiger, Yuval Dor, Eran Segal
+<a href="../publications/2020/framework_2020.html" class="no-external">Hagai Rossman, Ayya Keshet, Smadar Shilo, Amir Gavrieli, Tal Bauman, Ori Cohen, Ran Balicer, Benjamin Geiger, Yuval Dor, Eran Segal</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Covid-19'); return false;">
 Covid-19
 </div>
 </div>
-<a href="../publications/2020/framework_2020.html">
 <div class="listing-description">
-[paper]
+<a href="../publications/2020/framework_2020.html" class="no-external">[paper]</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../publications/2020/framework_2020.html">
+<a href="../publications/2020/framework_2020.html" class="no-external">
 <div class="listing-date">
 2020
 </div>
@@ -413,32 +570,96 @@ Nature Medicine
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="12" data-categories="HPP" data-listing-date-sort="1701381600000" data-listing-file-modified-sort="1710600098442" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="10" data-categories="EHRs" data-listing-date-sort="1578891600000" data-listing-file-modified-sort="1716919082019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="208">
 <div class="thumbnail">
-<p><a href="../publications/2023/hpp_gwas.html"> <img src="../publications/images/hpp_gwas_2023.jpg" class="thumbnail-image"> </a></p>
+<p><a href="../publications/2020/gdm_2020.html" class="no-external"></a></p><a href="../publications/2020/gdm_2020.html" class="no-external">
+<p><img src="../publications/images/gdm_2020.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2020/gdm_2020.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2023/hpp_gwas.html">
 <h3 class="no-anchor listing-title">
-Genome-wide association studies and polygenic risk score phenome-wide association studies across complex phenotypes in the human phenotype project
+<a href="../publications/2020/gdm_2020.html" class="no-external">Prediction of gestational diabetes based on nationwide electronic health records</a>
 </h3>
 <div class="listing-subtitle">
-Zachary Levine, Iris Kalka, Dmitry Kolobkov, Hagai Rossman, Anastasia Godneva, Smadar Shilo, Ayya Keshet, Daphna Weissglas-Volkov, Tal Shor, Alon Diament, Yeela Talmor-Barkan, Yaron Aviv, Tom Sharon, Adina Weinberger, Eran Segal
+<a href="../publications/2020/gdm_2020.html" class="no-external">Nitzan Artzi, Smadar Shilo, Eran Hadar, Hagai Rossman, Shiri Hazan, Avi Ben-Haroush, Ran Balicer, Becca Feldman, Arnon Wiznitzer, Eran Segal</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('EHRs'); return false;">
+EHRs
+</div>
+</div>
+<div class="listing-description">
+<a href="../publications/2020/gdm_2020.html" class="no-external">[paper]</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../publications/2020/gdm_2020.html" class="no-external">
+<div class="listing-date">
+2020
+</div>
+<div class="listing-author">
+Nature Medicine
 </div>
 </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-categories="HPP" data-listing-date-sort="1578891600000" data-listing-file-modified-sort="1716919082016" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="148">
+<div class="thumbnail">
+<p><a href="../publications/2020/axes_2020.html" class="no-external"></a></p><a href="../publications/2020/axes_2020.html" class="no-external">
+<p><img src="../publications/images/axes_2020.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2020/axes_2020.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/2020/axes_2020.html" class="no-external">Axes of a revolution: challenges and promises of big data in healthcare</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/2020/axes_2020.html" class="no-external">Smadar Shilo, Hagai Rossman, Eran Segal</a>
+</div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('HPP'); return false;">
 HPP
 </div>
 </div>
-<a href="../publications/2023/hpp_gwas.html">
 <div class="listing-description">
-[paper]
+<a href="../publications/2020/axes_2020.html" class="no-external">[paper]</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../publications/2020/axes_2020.html" class="no-external">
+<div class="listing-date">
+2020
+</div>
+<div class="listing-author">
+Nature Medicine
 </div>
 </a>
 </div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-categories="HPP" data-listing-date-sort="1701406800000" data-listing-file-modified-sort="1716919082034" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="194">
+<div class="thumbnail">
+<p><a href="../publications/2023/hpp_gwas.html" class="no-external"></a></p><a href="../publications/2023/hpp_gwas.html" class="no-external">
+<p><img src="../publications/images/hpp_gwas_2023.jpg" class="thumbnail-image"></p>
+</a><p><a href="../publications/2023/hpp_gwas.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/2023/hpp_gwas.html" class="no-external">Genome-wide association studies and polygenic risk score phenome-wide association studies across complex phenotypes in the human phenotype project</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/2023/hpp_gwas.html" class="no-external">Zachary Levine, Iris Kalka, Dmitry Kolobkov, Hagai Rossman, Anastasia Godneva, Smadar Shilo, Ayya Keshet, Daphna Weissglas-Volkov, Tal Shor, Alon Diament, Yeela Talmor-Barkan, Yaron Aviv, Tom Sharon, Adina Weinberger, Eran Segal</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('HPP'); return false;">
+HPP
+</div>
+</div>
+<div class="listing-description">
+<a href="../publications/2023/hpp_gwas.html" class="no-external">[paper]</a>
+</div>
+</div>
 <div class="metadata">
-<a href="../publications/2023/hpp_gwas.html">
+<a href="../publications/2023/hpp_gwas.html" class="no-external">
 <div class="listing-date">
 2023
 </div>
@@ -448,32 +669,30 @@ Med
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="13" data-categories="HPP" data-listing-date-sort="1699999200000" data-listing-file-modified-sort="1710600098442" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="13" data-categories="HPP" data-listing-date-sort="1700024400000" data-listing-file-modified-sort="1716919082035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="128">
 <div class="thumbnail">
-<p><a href="../publications/2023/sleep_arxiv_2023.html"> <img src="../publications/images/sleep_arxiv_2023.png" class="thumbnail-image"> </a></p>
+<p><a href="../publications/2023/sleep_arxiv_2023.html" class="no-external"></a></p><a href="../publications/2023/sleep_arxiv_2023.html" class="no-external">
+<p><img src="../publications/images/sleep_arxiv_2023.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2023/sleep_arxiv_2023.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2023/sleep_arxiv_2023.html">
 <h3 class="no-anchor listing-title">
-A Multimodal Dataset of 21,412 Recorded Nights for Sleep and Respiratory Research
+<a href="../publications/2023/sleep_arxiv_2023.html" class="no-external">A Multimodal Dataset of 21,412 Recorded Nights for Sleep and Respiratory Research</a>
 </h3>
 <div class="listing-subtitle">
-Alon Diament, Maria Gorodetski, Adam Jankelow, Ayya Keshet, Tal Shor, Daphna Weissglas-Volkov, Hagai Rossman, Eran Segal
+<a href="../publications/2023/sleep_arxiv_2023.html" class="no-external">Alon Diament, Maria Gorodetski, Adam Jankelow, Ayya Keshet, Tal Shor, Daphna Weissglas-Volkov, Hagai Rossman, Eran Segal</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('HPP'); return false;">
 HPP
 </div>
 </div>
-<a href="../publications/2023/sleep_arxiv_2023.html">
 <div class="listing-description">
-[paper]
+<a href="../publications/2023/sleep_arxiv_2023.html" class="no-external">[paper]</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../publications/2023/sleep_arxiv_2023.html">
+<a href="../publications/2023/sleep_arxiv_2023.html" class="no-external">
 <div class="listing-date">
 2023
 </div>
@@ -483,32 +702,96 @@ arXiv (preprint)
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="16" data-categories="Covid-19" data-listing-date-sort="1607032800000" data-listing-file-modified-sort="1710600098440" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="14" data-categories="Covid-19" data-listing-date-sort="1640926800000" data-listing-file-modified-sort="1716919082027" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="38">
 <div class="thumbnail">
-<p><a href="../publications/2020/longitudinal_2020.html"> <img src="../publications/images/longitudinal_2020.png" class="thumbnail-image"> </a></p>
+<p><a href="../publications/2021/nowcasting_2021.html" class="no-external"></a></p><a href="../publications/2021/nowcasting_2021.html" class="no-external">
+<p><img src="../publications/images/nowcasting_2021.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2021/nowcasting_2021.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2020/longitudinal_2020.html">
 <h3 class="no-anchor listing-title">
-Longitudinal symptom dynamics of COVID-19 infection
+<a href="../publications/2021/nowcasting_2021.html" class="no-external">Nowcasting the spread of SARS-CoV-2</a>
 </h3>
 <div class="listing-subtitle">
-Barak Mizrahi, Smadar Shilo, Hagai Rossman, Nir Kalkstein, Karni Marcus, Yael Barer, Ayya Keshet, Na’ama Shamir-Stein, Varda Shalev, Anat Ekka Zohar, Gabriel Chodick, Eran Segal
+<a href="../publications/2021/nowcasting_2021.html" class="no-external">Hagai Rossman, Eran Segal</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Covid-19'); return false;">
 Covid-19
 </div>
 </div>
-<a href="../publications/2020/longitudinal_2020.html">
 <div class="listing-description">
-[paper] [blog]
+<a href="../publications/2021/nowcasting_2021.html" class="no-external">[paper]</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../publications/2021/nowcasting_2021.html" class="no-external">
+<div class="listing-date">
+2021
+</div>
+<div class="listing-author">
+Nature Microbiology
 </div>
 </a>
 </div>
+</div>
+<div class="quarto-post image-right" data-index="15" data-categories="EHRs" data-listing-date-sort="1667797200000" data-listing-file-modified-sort="1716919082031" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="248">
+<div class="thumbnail">
+<p><a href="../publications/2022/noacs_2022.html" class="no-external"></a></p><a href="../publications/2022/noacs_2022.html" class="no-external">
+<p><img src="../publications/images/noacs_2022.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2022/noacs_2022.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/2022/noacs_2022.html" class="no-external">Head-to-head efficacy and safety of rivaroxaban, apixaban, and dabigatran in an observational nationwide targeted trial</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/2022/noacs_2022.html" class="no-external">Yeela Talmor-Barkan, Nancy-Sarah Yacovzada, Hagai Rossman, Guy Witberg, Iris Kalka, Ran Kornowski, Eran Segal</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('EHRs'); return false;">
+EHRs
+</div>
+</div>
+<div class="listing-description">
+<a href="../publications/2022/noacs_2022.html" class="no-external">[paper]</a>
+</div>
+</div>
 <div class="metadata">
-<a href="../publications/2020/longitudinal_2020.html">
+<a href="../publications/2022/noacs_2022.html" class="no-external">
+<div class="listing-date">
+2022
+</div>
+<div class="listing-author">
+European Heart Journal-Cardiovascular Pharmacotherapy
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="16" data-categories="Covid-19" data-listing-date-sort="1607058000000" data-listing-file-modified-sort="1716919082020" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="150">
+<div class="thumbnail">
+<p><a href="../publications/2020/longitudinal_2020.html" class="no-external"></a></p><a href="../publications/2020/longitudinal_2020.html" class="no-external">
+<p><img src="../publications/images/longitudinal_2020.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2020/longitudinal_2020.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/2020/longitudinal_2020.html" class="no-external">Longitudinal symptom dynamics of COVID-19 infection</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/2020/longitudinal_2020.html" class="no-external">Barak Mizrahi, Smadar Shilo, Hagai Rossman, Nir Kalkstein, Karni Marcus, Yael Barer, Ayya Keshet, Na’ama Shamir-Stein, Varda Shalev, Anat Ekka Zohar, Gabriel Chodick, Eran Segal</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Covid-19'); return false;">
+Covid-19
+</div>
+</div>
+<div class="listing-description">
+<a href="../publications/2020/longitudinal_2020.html" class="no-external">[paper] [blog]</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../publications/2020/longitudinal_2020.html" class="no-external">
 <div class="listing-date">
 2020
 </div>
@@ -518,32 +801,30 @@ Nature Communications
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="17" data-categories="HPP" data-listing-date-sort="1621026000000" data-listing-file-modified-sort="1710600098440" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="17" data-categories="HPP" data-listing-date-sort="1621051200000" data-listing-file-modified-sort="1716919082024" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="200">
 <div class="thumbnail">
-<p><a href="../publications/2021/cohort_10k.html"> <img src="../publications/images/cohort_10k.png" class="thumbnail-image"> </a></p>
+<p><a href="../publications/2021/cohort_10k.html" class="no-external"></a></p><a href="../publications/2021/cohort_10k.html" class="no-external">
+<p><img src="../publications/images/cohort_10k.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2021/cohort_10k.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2021/cohort_10k.html">
 <h3 class="no-anchor listing-title">
-Cohort profile: 10K - a large-scale prospective longitudinal study in Israel
+<a href="../publications/2021/cohort_10k.html" class="no-external">Cohort profile: 10K - a large-scale prospective longitudinal study in Israel</a>
 </h3>
 <div class="listing-subtitle">
-Smadar Shilo, Noam Bar, Ayya Keshet, Yeela Talmor-Barkan, Hagai Rossman, Anastasia Godneva, Yaron Aviv, Yochai Edlitz, Lee Reicher, Dmitry Kolobkov, Bat Chen Wolf, Maya Lotan-Pompan, Kohava Levi, Ori Cohen, Hila Saranga, Adina Weinberger, Eran Segal
+<a href="../publications/2021/cohort_10k.html" class="no-external">Smadar Shilo, Noam Bar, Ayya Keshet, Yeela Talmor-Barkan, Hagai Rossman, Anastasia Godneva, Yaron Aviv, Yochai Edlitz, Lee Reicher, Dmitry Kolobkov, Bat Chen Wolf, Maya Lotan-Pompan, Kohava Levi, Ori Cohen, Hila Saranga, Adina Weinberger, Eran Segal</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('HPP'); return false;">
 HPP
 </div>
 </div>
-<a href="../publications/2021/cohort_10k.html">
 <div class="listing-description">
-[paper]
+<a href="../publications/2021/cohort_10k.html" class="no-external">[paper]</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../publications/2021/cohort_10k.html">
+<a href="../publications/2021/cohort_10k.html" class="no-external">
 <div class="listing-date">
 2021
 </div>
@@ -553,32 +834,30 @@ European Journal of Epidemiology
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="18" data-categories="Covid-19" data-listing-date-sort="1591045200000" data-listing-file-modified-sort="1710600098439" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="18" data-categories="Covid-19" data-listing-date-sort="1591070400000" data-listing-file-modified-sort="1716919082017" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="98">
 <div class="thumbnail">
-<p><a href="../publications/2020/consortium_2020.html"> <img src="../publications/images/consortium_2020.png" class="thumbnail-image"> </a></p>
+<p><a href="../publications/2020/consortium_2020.html" class="no-external"></a></p><a href="../publications/2020/consortium_2020.html" class="no-external">
+<p><img src="../publications/images/consortium_2020.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2020/consortium_2020.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2020/consortium_2020.html">
 <h3 class="no-anchor listing-title">
-Building an International Consortium for Tracking Coronavirus Health Status
+<a href="../publications/2020/consortium_2020.html" class="no-external">Building an International Consortium for Tracking Coronavirus Health Status</a>
 </h3>
 <div class="listing-subtitle">
-Segal et. al.
+<a href="../publications/2020/consortium_2020.html" class="no-external">Segal et. al.</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Covid-19'); return false;">
 Covid-19
 </div>
 </div>
-<a href="../publications/2020/consortium_2020.html">
 <div class="listing-description">
-[paper]
+<a href="../publications/2020/consortium_2020.html" class="no-external">[paper]</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../publications/2020/consortium_2020.html">
+<a href="../publications/2020/consortium_2020.html" class="no-external">
 <div class="listing-date">
 2020
 </div>
@@ -588,32 +867,63 @@ Nature Medicine
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="20" data-categories="Covid-19" data-listing-date-sort="1613080800000" data-listing-file-modified-sort="1710600098441" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="19" data-categories="Covid-19" data-listing-date-sort="1615525200000" data-listing-file-modified-sort="1716919082028" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
 <div class="thumbnail">
-<p><a href="../publications/2021/covid_triage_2021.html"> <img src="../publications/images/covid_triage_2021.jpg" class="thumbnail-image"> </a></p>
+<p><a href="../publications/2021/signals_2021.html" class="no-external"></a></p><a href="../publications/2021/signals_2021.html" class="no-external">
+<p><img src="../publications/images/signals_2021.png" class="thumbnail-image"></p>
+</a><p><a href="../publications/2021/signals_2021.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2021/covid_triage_2021.html">
 <h3 class="no-anchor listing-title">
-A Prediction Model to Prioritize Individuals for a SARS-CoV-2 Test Built from National Symptom Surveys
+<a href="../publications/2021/signals_2021.html" class="no-external">Signals of hope: Gauging the impact of a rapid national vaccination campaign</a>
 </h3>
 <div class="listing-subtitle">
-Saar Shoer, Tal Karady, Ayya Keshet, Smadar Shilo, Hagai Rossman, Amir Gavrieli, Tomer Meir, Amit Lavon, Dmitry Kolobkov, Iris Kalka, Anastasia Godneva, Ori Cohen, Adam Kariv, Ori Hoch, Mushon Zer-Aviv, Noam Castel, Anat Ekka Zohar, Angela Irony, Benjamin Geiger, Dorit Hizi, Varda Shalev, Ran Balicer, Eran Segal
+<a href="../publications/2021/signals_2021.html" class="no-external">Smadar Shilo, Hagai Rossman, Eran Segal</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Covid-19'); return false;">
 Covid-19
 </div>
 </div>
-<a href="../publications/2021/covid_triage_2021.html">
 <div class="listing-description">
-[paper]
+<a href="../publications/2021/signals_2021.html" class="no-external">[paper]</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../publications/2021/signals_2021.html" class="no-external">
+<div class="listing-date">
+2021
+</div>
+<div class="listing-author">
+Nature Reviews Immunology
 </div>
 </a>
 </div>
+</div>
+<div class="quarto-post image-right" data-index="20" data-categories="Covid-19" data-listing-date-sort="1613106000000" data-listing-file-modified-sort="1716919082025" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="234">
+<div class="thumbnail">
+<p><a href="../publications/2021/covid_triage_2021.html" class="no-external"></a></p><a href="../publications/2021/covid_triage_2021.html" class="no-external">
+<p><img src="../publications/images/covid_triage_2021.jpg" class="thumbnail-image"></p>
+</a><p><a href="../publications/2021/covid_triage_2021.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/2021/covid_triage_2021.html" class="no-external">A Prediction Model to Prioritize Individuals for a SARS-CoV-2 Test Built from National Symptom Surveys</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/2021/covid_triage_2021.html" class="no-external">Saar Shoer, Tal Karady, Ayya Keshet, Smadar Shilo, Hagai Rossman, Amir Gavrieli, Tomer Meir, Amit Lavon, Dmitry Kolobkov, Iris Kalka, Anastasia Godneva, Ori Cohen, Adam Kariv, Ori Hoch, Mushon Zer-Aviv, Noam Castel, Anat Ekka Zohar, Angela Irony, Benjamin Geiger, Dorit Hizi, Varda Shalev, Ran Balicer, Eran Segal</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Covid-19'); return false;">
+Covid-19
+</div>
+</div>
+<div class="listing-description">
+<a href="../publications/2021/covid_triage_2021.html" class="no-external">[paper]</a>
+</div>
+</div>
 <div class="metadata">
-<a href="../publications/2021/covid_triage_2021.html">
+<a href="../publications/2021/covid_triage_2021.html" class="no-external">
 <div class="listing-date">
 2021
 </div>
@@ -623,32 +933,96 @@ Med
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="23" data-categories="Covid-19" data-listing-date-sort="1630443600000" data-listing-file-modified-sort="1710600098440" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="21" data-categories="Covid-19" data-listing-date-sort="1666238400000" data-listing-file-modified-sort="1716919082029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="112">
 <div class="thumbnail">
-<p><a href="../publications/2021/anosmia_2021.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../publications/2022/covid_models_2022.html" class="no-external"></a></p><a href="../publications/2022/covid_models_2022.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../publications/2022/covid_models_2022.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2021/anosmia_2021.html">
 <h3 class="no-anchor listing-title">
-Anosmia and other SARS-CoV-2 positive test-associated symptoms, across three national, digital surveillance platforms as the COVID-19 pandemic and response unfolded: an observation study
+<a href="../publications/2022/covid_models_2022.html" class="no-external">The role of models in the covid-19 pandemic</a>
 </h3>
 <div class="listing-subtitle">
-Sudre, Keshet, et. al.
+<a href="../publications/2022/covid_models_2022.html" class="no-external">David M. Steinberg, Ran D. Balicer, Yoav Benjamini, Hilla De-Leon, Doron Gazit, Hagai Rossman, Eli Sprecher</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Covid-19'); return false;">
 Covid-19
 </div>
 </div>
-<a href="../publications/2021/anosmia_2021.html">
 <div class="listing-description">
-[paper]
+<a href="../publications/2022/covid_models_2022.html" class="no-external">[paper]</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../publications/2022/covid_models_2022.html" class="no-external">
+<div class="listing-date">
+2022
+</div>
+<div class="listing-author">
+Israel Journal of Health Policy Research
 </div>
 </a>
 </div>
+</div>
+<div class="quarto-post image-right" data-index="22" data-categories="EHRs" data-listing-date-sort="1638334800000" data-listing-file-modified-sort="1716919082026" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="thumbnail">
+<p><a href="../publications/2021/heritability_2021.html" class="no-external"></a></p><a href="../publications/2021/heritability_2021.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../publications/2021/heritability_2021.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/2021/heritability_2021.html" class="no-external">Estimating Heritability of Glycaemic Response to Metformin using Nationwide Electronic Health Records and Population-Sized Pedigree</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/2021/heritability_2021.html" class="no-external">Iris Kalka, Amir Gavrieli, Smadar Shilo, Hagai Rossman, Nitzan Artzi, Nancy-Sarah Yacovzada, Eran Segal</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('EHRs'); return false;">
+EHRs
+</div>
+</div>
+<div class="listing-description">
+<a href="../publications/2021/heritability_2021.html" class="no-external">[paper]</a>
+</div>
+</div>
 <div class="metadata">
-<a href="../publications/2021/anosmia_2021.html">
+<a href="../publications/2021/heritability_2021.html" class="no-external">
+<div class="listing-date">
+2021
+</div>
+<div class="listing-author">
+Communications medicine
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="23" data-categories="Covid-19" data-listing-date-sort="1630468800000" data-listing-file-modified-sort="1716919082021" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="thumbnail">
+<p><a href="../publications/2021/anosmia_2021.html" class="no-external"></a></p><a href="../publications/2021/anosmia_2021.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../publications/2021/anosmia_2021.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../publications/2021/anosmia_2021.html" class="no-external">Anosmia and other SARS-CoV-2 positive test-associated symptoms, across three national, digital surveillance platforms as the COVID-19 pandemic and response unfolded: an observation study</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../publications/2021/anosmia_2021.html" class="no-external">Sudre, Keshet, et. al.</a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Covid-19'); return false;">
+Covid-19
+</div>
+</div>
+<div class="listing-description">
+<a href="../publications/2021/anosmia_2021.html" class="no-external">[paper]</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../publications/2021/anosmia_2021.html" class="no-external">
 <div class="listing-date">
 2021
 </div>
@@ -658,32 +1032,30 @@ Lancet Digital Health
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="24" data-categories="Covid-19" data-listing-date-sort="1628024400000" data-listing-file-modified-sort="1710600098441" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="24" data-categories="Covid-19" data-listing-date-sort="1628049600000" data-listing-file-modified-sort="1716919082029" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="141">
 <div class="thumbnail">
-<p><a href="../publications/2021/stress_2021.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+<p><a href="../publications/2021/stress_2021.html" class="no-external"></a></p><a href="../publications/2021/stress_2021.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="../publications/2021/stress_2021.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2021/stress_2021.html">
 <h3 class="no-anchor listing-title">
-Stress-related emotional and behavioural impact following the first COVID-19 outbreak peak
+<a href="../publications/2021/stress_2021.html" class="no-external">Stress-related emotional and behavioural impact following the first COVID-19 outbreak peak</a>
 </h3>
 <div class="listing-subtitle">
-Asaf Benjamin, Yael Kuperman, Noa Eren, Ron Rotkopf, Maya Amitai, Hagai Rossman, Smadar Shilo, Tomer Meir, Ayya Keshet, Orit Nuttman-Shwartz, Eran Segal, Alon Chen
+<a href="../publications/2021/stress_2021.html" class="no-external">Asaf Benjamin, Yael Kuperman, Noa Eren, Ron Rotkopf, Maya Amitai, Hagai Rossman, Smadar Shilo, Tomer Meir, Ayya Keshet, Orit Nuttman-Shwartz, Eran Segal, Alon Chen</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Covid-19'); return false;">
 Covid-19
 </div>
 </div>
-<a href="../publications/2021/stress_2021.html">
 <div class="listing-description">
-[paper]
+<a href="../publications/2021/stress_2021.html" class="no-external">[paper]</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../publications/2021/stress_2021.html">
+<a href="../publications/2021/stress_2021.html" class="no-external">
 <div class="listing-date">
 2021
 </div>
@@ -693,32 +1065,30 @@ Molecular Psychiatry
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="25" data-categories="Covid-19" data-listing-date-sort="1609106400000" data-listing-file-modified-sort="1710600098440" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="25" data-categories="Covid-19" data-listing-date-sort="1609131600000" data-listing-file-modified-sort="1716919082020" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="288">
 <div class="thumbnail">
-<p><a href="../publications/2020/lockdown_2020.html"> <img data-src="../publications/images/lockdown_2020.jpg" class="thumbnail-image"> </a></p>
+<p><a href="../publications/2020/lockdown_2020.html" class="no-external"></a></p><a href="../publications/2020/lockdown_2020.html" class="no-external">
+<p><img data-src="../publications/images/lockdown_2020.jpg" class="thumbnail-image"></p>
+</a><p><a href="../publications/2020/lockdown_2020.html" class="no-external"></a></p>
 </div>
 <div class="body">
-<a href="../publications/2020/lockdown_2020.html">
 <h3 class="no-anchor listing-title">
-The effect of a national lockdown in response to COVID-19 pandemic on the prevalence of clinical symptoms in the population
+<a href="../publications/2020/lockdown_2020.html" class="no-external">The effect of a national lockdown in response to COVID-19 pandemic on the prevalence of clinical symptoms in the population</a>
 </h3>
 <div class="listing-subtitle">
-Ayya Keshet, Amir Gavrieli, Hagai Rossman, Smadar Shilo, Tomer Meir, Tal Karady, Amit Lavon, Dmitry Kolobkov, Iris Kalka, Saar Shoer, Anastasia Godneva, Ori Cohen, Adam Kariv, Ori Hoch, Mushon Zer-Aviv, Noam Castel, Anat Ekka Zohar, Angela Irony, Benjamin Geiger, Yuval Dor, Dorit Hizi, Ran Balicer, Varda Shalev, Eran Segal
+<a href="../publications/2020/lockdown_2020.html" class="no-external">Ayya Keshet, Amir Gavrieli, Hagai Rossman, Smadar Shilo, Tomer Meir, Tal Karady, Amit Lavon, Dmitry Kolobkov, Iris Kalka, Saar Shoer, Anastasia Godneva, Ori Cohen, Adam Kariv, Ori Hoch, Mushon Zer-Aviv, Noam Castel, Anat Ekka Zohar, Angela Irony, Benjamin Geiger, Yuval Dor, Dorit Hizi, Ran Balicer, Varda Shalev, Eran Segal</a>
 </div>
-</a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Covid-19'); return false;">
 Covid-19
 </div>
 </div>
-<a href="../publications/2020/lockdown_2020.html">
 <div class="listing-description">
-[preprint]
+<a href="../publications/2020/lockdown_2020.html" class="no-external">[preprint]</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="../publications/2020/lockdown_2020.html">
+<a href="../publications/2020/lockdown_2020.html" class="no-external">
 <div class="listing-date">
 2020
 </div>
@@ -777,6 +1147,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -845,13 +1242,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -930,10 +1329,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ayya-keshet\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -943,8 +1359,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -956,7 +1381,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1000,6 +1548,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1025,6 +1574,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1085,6 +1660,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Hagai Rossman"
+  title: "Ayya Keshet"
   navbar:
     background: primary
     search: true
@@ -10,30 +10,27 @@ website:
       - text: "Home"
         file: index.qmd
       - publications/publications.qmd
-      - projects.qmd 
-      - notes/index.qmd  
-      - other.qmd
 
     tools:
       - icon: twitter
-        href: https://twitter.com/H_Rossman
+        href: https://twitter.com/AyyaKeshet
       - icon: linkedin
-        href: https://www.linkedin.com/in/hagai-rossman/
+        href: https://www.linkedin.com/in/ayya-keshet-a048768a/
       - icon: google
-        href: https://scholar.google.com/citations?user=kQrQJ1gAAAAJ&hl=en
+        href: https://scholar.google.com/citations?user=iFB8x-IAAAAJ&hl=en
       - icon: github
-        href: https://github.com/hrossman
+        href: https://github.com/ayya-keshet
   
   twitter-card:
-     creator: "@H_Rossman"
-     site: "@H_Rossman"
+     creator: "@AyyaKeshet"
+     site: "@AyyaKeshet"
      card-style: summary_large_image
-  site-url: "https://hrossman.github.io/"
+  site-url: "https://ayya-keshet.github.io/"
 
 format:
   html:
     theme:
-      light: flatly
+      light: Minty
       dark: darkly
     css: styles.css
     toc: true
