@@ -4,7 +4,7 @@ title: ""
 
 ::: {layout="[21,79]" .profile-header}
 
-![](images/ayya.png){.profile-pic}
+![](images/ayya.jpg){.profile-pic}
 
 I'm Ayya Keshet, a researcher and data scientist, focusing on health data.
 Currently a PhD student in Computer Science at the Weizmann Institute of Science, [Segal lab](https://genie.weizmann.ac.il), expected to graduate this year.
