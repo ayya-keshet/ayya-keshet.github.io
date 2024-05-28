@@ -1,0 +1,104 @@
+{
+  "archive/publications_archive.qmd": {
+    "publications_archive.html": "ad21234e"
+  },
+  "index.qmd": {
+    "index.html": "7d49f2dd"
+  },
+  "other.qmd": {
+    "other.html": "63d468a0"
+  },
+  "projects.qmd": {
+    "projects.html": "83c1f98b"
+  },
+  "publications/2020/axes_2020.qmd": {
+    "axes_2020.html": "79efca67"
+  },
+  "publications/2020/consortium_2020.qmd": {
+    "consortium_2020.html": "63a470e9"
+  },
+  "publications/2020/framework_2020.qmd": {
+    "framework_2020.html": "2763e341"
+  },
+  "publications/2020/gdm_2020.qmd": {
+    "gdm_2020.html": "47cd69ab"
+  },
+  "publications/2020/lockdown_2020.qmd": {
+    "lockdown_2020.html": "bae0b106"
+  },
+  "publications/2020/longitudinal_2020.qmd": {
+    "longitudinal_2020.html": "5e67e48c"
+  },
+  "publications/2021/anosmia_2021.qmd": {
+    "anosmia_2021.html": "f2b6622c"
+  },
+  "publications/2021/childhood_obesity_2021.qmd": {
+    "childhood_obesity_2021.html": "c48a1d9c"
+  },
+  "publications/2021/cohort_10k.qmd": {
+    "cohort_10k.html": "bd763be9"
+  },
+  "publications/2021/covid_immunization_2021.qmd": {
+    "covid_immunization_2021.html": "2c61156e"
+  },
+  "publications/2021/covid_triage_2021.qmd": {
+    "covid_triage_2021.html": "34348edf"
+  },
+  "publications/2021/heritability_2021.qmd": {
+    "heritability_2021.html": "8166b62e"
+  },
+  "publications/2021/hospital_load_2021.qmd": {
+    "hospital_load_2021.html": "a1daa1d1"
+  },
+  "publications/2021/nowcasting_2021.qmd": {
+    "nowcasting_2021.html": "991f432d"
+  },
+  "publications/2021/signals_2021.qmd": {
+    "signals_2021.html": "ea8bfbb5"
+  },
+  "publications/2021/stress_2021.qmd": {
+    "stress_2021.html": "e2beebe9"
+  },
+  "publications/2022/covid_models_2022.qmd": {
+    "covid_models_2022.html": "dfcb58cf"
+  },
+  "publications/2022/csect_2022.qmd": {
+    "csect_2022.html": "49fb98d1"
+  },
+  "publications/2022/noacs_2022.qmd": {
+    "noacs_2022.html": "c30dc919"
+  },
+  "publications/2022/pymsm_2022.qmd": {
+    "pymsm_2022.html": "f4503565"
+  },
+  "publications/2023/cgmap_2023.qmd": {
+    "cgmap_2023.html": "75fe5a3a"
+  },
+  "publications/2023/hpp_gwas.qmd": {
+    "hpp_gwas.html": "8e0fa548"
+  },
+  "publications/2023/sleep_arxiv_2023.qmd": {
+    "sleep_arxiv_2023.html": "59bc681e"
+  },
+  "publications/2023/wearables_2023.qmd": {
+    "wearables_2023.html": "24d28e74"
+  },
+  "publications/2024/comprer_2024.qmd": {
+    "comprer_2024.html": "da2a6cc2"
+  },
+  "publications/2024/fasting_gluc_2024.qmd": {
+    "fasting_gluc_2024.html": "917c7ce5"
+  },
+  "publications/2024/fundus_2024.qmd": {
+    "fundus_2024.html": "91e535a5"
+  },
+  "publications/index.qmd": {
+    "index.html": "fe3b2eff"
+  },
+  "publications/publications.qmd": {
+    "publications.html": "002a43f4"
+  },
+  "publications.qmd": {
+    "publications.html": "a644e407"
+  }
+}
