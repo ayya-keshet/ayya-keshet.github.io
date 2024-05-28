@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="medArxiv (preprint)">
+<meta name="dcterms.date" content="2024-03-25">
 
-<title>Ayya Keshet -</title>
+<title>Ayya Keshet - COMPRER: A Multimodal Multi-Objective Pretraining Framework for Enhanced Medical Image Representation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,8 +72,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="Ayya Keshet -">
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="Ayya Keshet - COMPRER: A Multimodal Multi-Objective Pretraining Framework for Enhanced Medical Image Representation">
+<meta name="twitter:description" content="Guy Lutsker, Hagai Rossman, Nastya Godneva, Eran Segal">
+<meta name="twitter:image" content="https://ayya-keshet.github.io/publications/images/comprer_2024.jpg">
 <meta name="twitter:creator" content="@AyyaKeshet">
 <meta name="twitter:site" content="@AyyaKeshet">
 <meta name="twitter:card" content="summary_large_image">
@@ -84,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ayya Keshet</span>
     </a>
   </div>
@@ -95,11 +99,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications/publications.html"> 
+    <a class="nav-link" href="../../publications/publications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
 </ul>
@@ -124,25 +128,45 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">COMPRER: A Multimodal Multi-Objective Pretraining Framework for Enhanced Medical Image Representation</h1>
+<p class="subtitle lead">Guy Lutsker, Hagai Rossman, Nastya Godneva, Eran Segal</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">HPP</div>
+    <div class="quarto-category">Methods</div>
+  </div>
+  </div>
 
 
 
-<div>
+<div class="quarto-title-meta">
 
-</div>
-<div class="profile-header quarto-layout-panel" data-layout="[21,79]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 21.0%;justify-content: center;">
-<p><img src="images/Hagai_Rossman_color.png" class="profile-pic img-fluid"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 79.0%;justify-content: flex-start;">
-<p>Hi 👋<br>
-I’m Hagai Rossman, a researcher and data scientist with a focus on health data. My interests extend into AI and biomedical data, especially at their intersection.<br>
-Currently, I am part of a stellar team at <a href="https://www.pheno.ai/">Pheno.AI</a>, where we work on projects that lie at the interface of data and health.<br>
-Previously, I was a Ph.D student in Computer Science at the Weizmann Institute of Science, <a href="https://genie.weizmann.ac.il">Segal lab</a>.</p>
-</div>
-</div>
-</div>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>medArxiv (preprint) </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 25, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>[<a href="https://www.medrxiv.org/content/10.1101/2024.03.17.24304415v2">paper</a>]</p>
+<p>Substantial advances in multi-modal Artificial Intelligence (AI) facilitate the combination of diverse medical modalities to achieve holistic health assessments. We present COMPRER, a novel multi-modal, multi-objective pretraining framework which enhances medical-image representation, diagnostic inferences, and prognosis of diseases. COMPRER employs a multi-objective training framework, where each objective introduces distinct knowledge to the model. This includes a multi-modal loss that consolidates information across different imaging modalities; A temporal loss that imparts the ability to discern patterns over time; Medical-measure prediction adds appropriate medical insights; Lastly, reconstruction loss ensures the integrity of image structure within the latent space. Despite the concern that multiple objectives could weaken task performance, our findings show that this combination actually boosts outcomes on certain tasks. Here, we apply this framework to both fundus images and carotid ultrasound, and validate our downstream tasks capabilities by predicting both current and future cardiovascular conditions. COMPRER achieved higher Area Under the Curve (AUC) scores in evaluating medical conditions compared to existing models on held-out data. On the Out-of-distribution (OOD) UK-Biobank dataset COMPRER maintains favorable performance over well-established models with more parameters, even though these models were trained on 75× more data than COMPRER. In addition, to better assess our model’s performance in contrastive learning, we introduce a novel evaluation metric, providing deeper understanding of the effectiveness of the latent space pairing.</p>
+<p><img src="../images/comprer_2024.jpg" class="img-fluid"></p>
 
 
 
