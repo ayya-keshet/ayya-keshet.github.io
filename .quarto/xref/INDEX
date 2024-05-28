@@ -1,0 +1,59 @@
+{
+  "index.qmd": {
+    "index.html": "47cad717"
+  },
+  "publications/2020/consortium_2020.qmd": {
+    "consortium_2020.html": "6d1f7444"
+  },
+  "publications/2020/framework_2020.qmd": {
+    "framework_2020.html": "c0dfb9a8"
+  },
+  "publications/2020/lockdown_2020.qmd": {
+    "lockdown_2020.html": "7d63a9dd"
+  },
+  "publications/2020/longitudinal_2020.qmd": {
+    "longitudinal_2020.html": "2fda0cd6"
+  },
+  "publications/2021/anosmia_2021.qmd": {
+    "anosmia_2021.html": "26961852"
+  },
+  "publications/2021/cohort_10k.qmd": {
+    "cohort_10k.html": "b9591df2"
+  },
+  "publications/2021/covid_triage_2021.qmd": {
+    "covid_triage_2021.html": "0179ae8c"
+  },
+  "publications/2021/stress_2021.qmd": {
+    "stress_2021.html": "f061afc1"
+  },
+  "publications/2022/csect_2022.qmd": {
+    "csect_2022.html": "97439e54"
+  },
+  "publications/2022/pymsm_2022.qmd": {
+    "pymsm_2022.html": "90474efd"
+  },
+  "publications/2023/cgmap_2023.qmd": {
+    "cgmap_2023.html": "031baa41"
+  },
+  "publications/2023/hpp_gwas.qmd": {
+    "hpp_gwas.html": "192184b4"
+  },
+  "publications/2023/sleep_arxiv_2023.qmd": {
+    "sleep_arxiv_2023.html": "cf7d09c4"
+  },
+  "publications/2023/wearables_2023.qmd": {
+    "wearables_2023.html": "e03009fc"
+  },
+  "publications/2024/fasting_gluc_2024.qmd": {
+    "fasting_gluc_2024.html": "ec0242b5"
+  },
+  "publications/index.qmd": {
+    "index.html": "d9679441"
+  },
+  "publications/publications.qmd": {
+    "publications.html": "d14b64ed"
+  },
+  "publications.qmd": {
+    "publications.html": "59553ffb"
+  }
+}
