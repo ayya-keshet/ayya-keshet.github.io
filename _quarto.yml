@@ -30,8 +30,8 @@ website:
 format:
   html:
     theme:
-      light: Minty
-      dark: darkly
+      light: darkly
+      dark: Minty
     css: styles.css
     toc: true
 
