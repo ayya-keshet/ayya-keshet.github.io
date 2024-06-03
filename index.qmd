@@ -4,11 +4,11 @@ title: ""
 
 ::: {layout="[21,79]" .profile-header}
 
-![](images/ayya.jpg){.profile-pic}
+<img src="images/ayya.jpg" alt="Profile Picture" style="width: 200px; height: auto; border-radius: 50%; display: block; margin: 0 auto;">
 
-I'm Ayya Keshet, a researcher and data scientist, focusing on health data.
-Currently a PhD student in Computer Science at the Weizmann Institute of Science, [Segal lab](https://genie.weizmann.ac.il), expected to graduate this year.
-I also work part time as a data scientist at [Pheno.AI](https://www.pheno.ai/).
+I'm Ayya Keshet, a researcher and data scientist, focusing on health data.<br>
+Currently a PhD student in Computer Science at the Weizmann Institute of Science, [Segal lab](https://genie.weizmann.ac.il), expected to graduate this year.<br>
+I also work part time as a data scientist at [Pheno.AI](https://www.pheno.ai/).<br>
 My passion is utilizing computational and statistical tools, along with health and biomedical data, to improve medical knowledge and care.
 
 :::
